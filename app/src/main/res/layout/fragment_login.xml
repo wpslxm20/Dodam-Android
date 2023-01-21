@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".src.main.myPage.LoginFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_dodam_login"
+            android:background="@color/transparency"
+            android:adjustViewBounds="true"
+            android:scaleType="center"
+            android:scaleX="0.5"
+            android:scaleY="0.5">
+        </ImageButton>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginHorizontal="50dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/id_kor"
+                android:textColorHint="@color/hint_text">
+            </EditText>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password_kor"
+                android:textColorHint="@color/hint_text">
+            </EditText>
+            <ImageButton
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/login_button">
+
+            </ImageButton>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>

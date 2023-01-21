@@ -2,4 +2,9 @@
     <string name="app_name">Dodam</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="write_step">단계 등록</string>
+    <string name="배란유도주사">배란 유도 주사</string>
+    <string name="id_kor">아이디</string>
+    <string name="password_kor">비밀번호</string>
+
 </resources>

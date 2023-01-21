@@ -1,10 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".src.main.home.HomeFragment">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <ImageView
+                android:layout_width="258dp"
+                android:layout_height="258dp"
+                android:src="@drawable/home_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+            <!-- text 값은 변수에 따라 달라질 거라 일부러 string파일로 하지 않음-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="유니,\n과정 2일째"
+                android:paddingTop="150dp"
+                android:paddingStart="50dp"
+                android:textStyle="bold"
+                android:textSize="16dp">
+            </TextView>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/write_step"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="20dp"
+                android:drawableStart="@drawable/write_step_button"
+                android:background="@drawable/button_write_step">
+            </Button>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/write_step"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/write_step_button"
+                android:background="@drawable/button_write_step">
+
+            </ImageButton>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 </FrameLayout>
