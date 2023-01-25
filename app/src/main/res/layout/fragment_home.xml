@@ -16,7 +16,7 @@
             <ImageView
                 android:layout_width="258dp"
                 android:layout_height="258dp"
-                android:src="@drawable/home_background"
+                android:src="@drawable/home_background_image"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"></ImageView>
 
@@ -37,10 +37,10 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:text="@string/write_step"
+                android:text="@string/write_step_kor"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp"
-                android:drawableStart="@drawable/write_step_button"
+                android:drawableStart="@drawable/write_step_button_image"
                 android:background="@drawable/button_write_step">
             </Button>
             <ImageButton
@@ -51,7 +51,7 @@
                 android:text="@string/write_step"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/write_step_button"
+                android:src="@drawable/write_step_button_image"
                 android:background="@drawable/button_write_step">
 
             </ImageButton>
