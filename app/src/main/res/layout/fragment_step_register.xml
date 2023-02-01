@@ -96,7 +96,7 @@
             android:id="@+id/step_register_recyclerview"
             android:layout_width="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/step_layout"
+            tools:listitem="@layout/step_register_item"
             android:layout_height="wrap_content"
             android:scrollbars="vertical"
             android:paddingHorizontal="20dp"
@@ -109,7 +109,7 @@
             android:layout_marginHorizontal="30dp"
             android:textSize="12sp"
             android:background="@color/white"
-            android:textColor="@color/gray"
+            android:textColor="@color/hint_text"
             android:gravity="left|center"
             />
 

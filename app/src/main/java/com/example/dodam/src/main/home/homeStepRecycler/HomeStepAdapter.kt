@@ -1,6 +1,5 @@
-package homeStepRecycler
+package com.example.dodam.src.main.home.homeStepRecycler
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
