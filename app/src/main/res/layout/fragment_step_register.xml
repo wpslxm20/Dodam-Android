@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".src.main.home.StepRegisterFragment">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/circle_background"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="680dp"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="40dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/step_register_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/step_setting_and_calendar_register"
+            android:textColor="@color/black"
+            android:layout_margin="30dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/step_setting"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="30dp"
+            android:textSize="13sp"/>
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="3dp"
+            android:background="@drawable/step_setting_underline"
+            android:layout_marginLeft="30dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_date"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="@string/step_date"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/btn_calendar"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시술 단계"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"/>
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="3dp"
+            android:background="@drawable/step_setting_underline"
+            android:layout_marginLeft="30dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/step_register_recyclerview"
+            android:layout_width="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/step_layout"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="@string/new_step_add"
+            android:layout_marginHorizontal="30dp"
+            android:textSize="12sp"
+            android:background="@color/white"
+            android:textColor="@color/gray"
+            android:gravity="left|center"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

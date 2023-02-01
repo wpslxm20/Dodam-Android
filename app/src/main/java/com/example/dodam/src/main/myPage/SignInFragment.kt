@@ -1,18 +1,16 @@
 package com.example.dodam.src.main.myPage
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import com.example.dodam.R
-import com.example.dodam.databinding.FragmentMyPageBinding
+import com.example.dodam.databinding.FragmentSignInBinding
 
-class MyPageFragment : Fragment() {
+class SignInFragment : Fragment(){
 
-    private lateinit var binding: FragmentMyPageBinding
+    private lateinit var binding: FragmentSignInBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,15 +20,16 @@ class MyPageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMyPageBinding.inflate(layoutInflater)
+        binding = FragmentSignInBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnSignIn.setOnClickListener {
-            Log.d("msg", "sign in btn working")
-            view?.findNavController()?.navigate(R.id.action_myPageFragment_to_signInFragment)
-        }
+        setOnClickListener()
+    }
+
+    private fun setOnClickListener() {
+
     }
 }

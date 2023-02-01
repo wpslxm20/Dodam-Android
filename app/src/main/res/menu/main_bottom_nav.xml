@@ -9,7 +9,7 @@
         android:title="DIARY"
         />
     <item
-        android:id="@+id/menu_mypage"
+        android:id="@+id/sign_in"
         android:title="MYPAGE"
         />
 </menu>
