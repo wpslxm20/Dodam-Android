@@ -1,6 +1,8 @@
 package homeStepRecycler
 
-class HomeStepItem {
-    var stepName: String = ""
+data class HomeStepItem (
+    var stepName: String = "",
     var stepChecked: Boolean = false
-}
+
+
+)

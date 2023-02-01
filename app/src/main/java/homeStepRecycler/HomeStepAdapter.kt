@@ -32,7 +32,13 @@ class HomeStepAdapter(val stepList: List<HomeStepItem>): RecyclerView.Adapter<Ho
 //            bind(listener, item)
             binding.stepName.text = item.stepName
             if (position==0){
-
+                binding.stepImage.setImageResource(R.drawable.home_first_step_image)
+            }
+            else if (position == stepList.size - 1){
+                binding.stepImage.setImageResource(R.drawable.home_final_step_image)
+            }
+            else{
+                binding.stepImage.setImageResource(R.drawable.home_middle_step_image)
             }
         }
     }

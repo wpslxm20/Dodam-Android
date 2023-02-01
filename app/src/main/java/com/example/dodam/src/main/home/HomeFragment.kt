@@ -6,13 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.dodam.R
+import com.example.dodam.databinding.FragmentHomeBinding
 import com.example.dodam.databinding.FragmentLoginBinding
+import homeStepRecycler.HomeStepAdapter
+import homeStepRecycler.HomeStepItem
 
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    //home 화면의 단계 recycler 연결
+    lateinit var homeStepAdapter: HomeStepAdapter
+    val homeStepList = mutableListOf<HomeStepItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +31,22 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        //home화면의 일정 목록
+        homeStepList.apply {
+            add(HomeStepItem("배란 유도 주사"))
+            add(HomeStepItem("배란 주사"))
+            add(HomeStepItem("난자 / 정자 채취"))
+            add(HomeStepItem("배아 이식"))
+            add(HomeStepItem("임신 확인 검사"))
+        }
+
+        //home 화면의 일정 recycler 어댑터 연결
+        homeStepAdapter = HomeStepAdapter(this.homeStepList)
+        binding.rvHomeStep.adapter = homeStepAdapter
+        
         return view
     }
     // 프래그먼트가 destroy (파괴) 될때

@@ -77,14 +77,22 @@
                 android:textColor="#757575"
                 android:layout_marginTop="10dp">
             </TextView>
-            <androidx.recyclerview.widget.RecyclerView
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/home_step_item">
+                android:layout_marginHorizontal="5dp">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/home_step_item"
+                    android:id="@+id/rv_home_step">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </HorizontalScrollView>
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>

@@ -8,4 +8,5 @@
     <string name="password_kor">비밀번호</string>
     <string name="signup_kor">회원가입</string>
     <string name="login_kor">로그인</string>
+    <string name="medical_record_kor">진료기록</string>
 </resources>
