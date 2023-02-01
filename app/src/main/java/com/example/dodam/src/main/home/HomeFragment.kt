@@ -6,28 +6,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.dodam.R
+import com.example.dodam.databinding.FragmentHomeBinding
+import com.example.dodam.databinding.FragmentLoginBinding
+import homeStepRecycler.HomeStepAdapter
+import homeStepRecycler.HomeStepItem
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+    //home 화면의 단계 recycler 연결
+    lateinit var homeStepAdapter: HomeStepAdapter
+    val homeStepList = mutableListOf<HomeStepItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -35,26 +31,29 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        //home화면의 일정 목록
+        homeStepList.apply {
+            add(HomeStepItem("배란 유도 주사"))
+            add(HomeStepItem("배란 주사"))
+            add(HomeStepItem("난자 / 정자 채취"))
+            add(HomeStepItem("배아 이식"))
+            add(HomeStepItem("임신 확인 검사"))
+        }
+
+        //home 화면의 일정 recycler 어댑터 연결
+        homeStepAdapter = HomeStepAdapter(this.homeStepList)
+        binding.rvHomeStep.adapter = homeStepAdapter
+        
+        return view
+    }
+    // 프래그먼트가 destroy (파괴) 될때
+    override fun onDestroyView() {
+        // 프래그먼트는 뷰보다 더 오래 살아남는다고 한다.
+        // onDestroyView 에서 binding class 인스턴스 참조를 정리해주어야 한다.
+        _binding = null
+        super.onDestroyView()
     }
 }

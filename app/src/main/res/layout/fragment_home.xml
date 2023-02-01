@@ -1,14 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".src.main.home.HomeFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="home fragment" />
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="258dp"
+                android:layout_height="258dp"
+                android:src="@drawable/home_background_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+            <!-- text 값은 변수에 따라 달라질 거라 일부러 string파일로 하지 않음-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="유니,\n과정 2일째"
+                android:paddingTop="150dp"
+                android:paddingStart="50dp"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:textColor="@color/black">
+            </TextView>
+            <LinearLayout android:layout_height="35dp"
+                android:layout_width="100dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/write_step_button_image"
+                android:gravity="center"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="30dp"
+                >
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/write_step_kor"
+                    android:background="@color/transparency"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    >
+                </Button>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="30dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="배란 유도 주사"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#454545">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10월 1일 ~ 10일까지"
+                android:textSize="8dp"
+                android:textStyle="bold"
+                android:textColor="#757575"
+                android:layout_marginTop="10dp">
+            </TextView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/home_step_item"
+                    android:id="@+id/rv_home_step">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </HorizontalScrollView>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 </FrameLayout>
