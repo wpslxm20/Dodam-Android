@@ -1,39 +1,59 @@
 package com.example.dodam.src.main.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import com.example.dodam.R
 import com.example.dodam.databinding.FragmentHomeBinding
-import com.example.dodam.src.main.MainActivity
+import com.example.dodam.databinding.FragmentLoginBinding
+import homeStepRecycler.HomeStepAdapter
+import homeStepRecycler.HomeStepItem
+
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+    //home 화면의 단계 recycler 연결
+    lateinit var homeStepAdapter: HomeStepAdapter
+    val homeStepList = mutableListOf<HomeStepItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(layoutInflater)
-        return binding.root
-    }
+        // Inflate the layout for this fragment
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.btnStepRegister.setOnClickListener {
-            Log.d("msg", "step register btn working")
-            view?.findNavController()?.navigate(R.id.action_homeFragment_to_stepRegisterFragment)
+        //home화면의 일정 목록
+        homeStepList.apply {
+            add(HomeStepItem("배란 유도 주사"))
+            add(HomeStepItem("배란 주사"))
+            add(HomeStepItem("난자 / 정자 채취"))
+            add(HomeStepItem("배아 이식"))
+            add(HomeStepItem("임신 확인 검사"))
         }
-    }
 
+        //home 화면의 일정 recycler 어댑터 연결
+        homeStepAdapter = HomeStepAdapter(this.homeStepList)
+        binding.rvHomeStep.adapter = homeStepAdapter
+
+        return view
+    }
+    // 프래그먼트가 destroy (파괴) 될때
+    override fun onDestroyView() {
+        // 프래그먼트는 뷰보다 더 오래 살아남는다고 한다.
+        // onDestroyView 에서 binding class 인스턴스 참조를 정리해주어야 한다.
+        _binding = null
+        super.onDestroyView()
+    }
 }

@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">Dodam</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="write_step_kor">단계 등록</string>
+    <string name="배란유도주사">배란 유도 주사</string>
+    <string name="id_kor">아이디</string>
+    <string name="password_kor">비밀번호</string>
+    <string name="signup_kor">회원가입</string>
+    <string name="login_kor">로그인</string>
+    <string name="medical_record_kor">진료기록</string>
 
     <!-- Home Fragment -->
     <string name="step_register">단계 등록</string>
@@ -22,7 +31,7 @@
     <string name="phone_number_hint">\'-\' 구분없이 입력하세요</string>
     <string name="certification_hint">인증번호 5자리를 입력하세요</string>
     <string name="birth_hint">생년월일 8자리를 입력하세요</string>
-    
+
     <!--Step Register Fragment-->
     <string name="step_setting_and_calendar_register">단계 설정 및 일정 등록</string>
     <string name="step_name">시술 단계 명</string>

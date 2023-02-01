@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:src="@drawable/home_first_step_image"
+        android:scaleType="fitXY"
+        android:id="@+id/step_image"
+        >
+    </androidx.constraintlayout.utils.widget.ImageFilterView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="배란 유도 주사"
+        android:textSize="10dp"
+        android:paddingHorizontal="15dp"
+        android:textColor="@color/home_step_text"
+        android:id="@+id/step_name">
+    </TextView>
+</androidx.appcompat.widget.LinearLayoutCompat>
