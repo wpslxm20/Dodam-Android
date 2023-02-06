@@ -9,7 +9,11 @@
     <string name="password_kor">비밀번호</string>
     <string name="signup_kor">회원가입</string>
     <string name="login_kor">로그인</string>
+
+    <!-- MedicalRecord Fragment -->
     <string name="medical_record_kor">진료기록</string>
+    <string name="save_kor">저장</string>
+    <string name="today_schedule_kor">오늘의 일정</string>
 
     <!-- Home Fragment -->
     <string name="step_register">단계 등록</string>
