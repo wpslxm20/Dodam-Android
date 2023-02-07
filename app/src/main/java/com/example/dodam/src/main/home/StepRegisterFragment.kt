@@ -5,43 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.dodam.R
+import com.example.dodam.databinding.FragmentHomeBinding
 import com.example.dodam.databinding.FragmentStepRegisterBinding
-
-class TestData (
-    private var step_name: String ?= null,
-    private var step_period: String ?= null
-) {
-    fun getStepName(): String? {
-        return step_name
-    }
-
-    fun setStepName(step_name: String){
-        this.step_name = step_name
-    }
-
-    fun getStepPeriod(): String? {
-        return step_period
-    }
-
-    fun setStepPeriod(step_period: String){
-        this.step_period = step_period
-    }
-}
+import com.example.dodam.src.main.home.homeStepRecycler.HomeStepAdapter
+import com.example.dodam.src.main.home.homeStepRecycler.HomeStepItem
+import com.example.dodam.src.main.home.homeStepRegisterRecycler.StepRegisterAdapter
+import com.example.dodam.src.main.home.homeStepRegisterRecycler.StepRegisterItem
 
 class StepRegisterFragment : Fragment() {
 
-    private lateinit var binding: FragmentStepRegisterBinding
-    private lateinit var StepRegisterAdapter: StepRegisterAdapter
+    private var _binding: FragmentStepRegisterBinding? = null
+    private val binding get() = _binding!!
 
-    var dataList: ArrayList<TestData> = arrayListOf(
-        TestData("시술 단계 명1", "기간1"),
-        TestData("시술 단계 명1", "기간1"),
-        TestData("시술 단계 명1", "기간1"),
-        TestData("시술 단계 명1", "기간1"),
-        TestData("시술 단계 명1", "기간1")
-    )
+    private lateinit var StepRegisterAdapter: StepRegisterAdapter
+    val stepRegisterList = mutableListOf<StepRegisterItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,8 +28,27 @@ class StepRegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentStepRegisterBinding.inflate(layoutInflater)
+        _binding = FragmentStepRegisterBinding.inflate(layoutInflater)
+
+        stepRegisterList.apply {
+            add(StepRegisterItem("배란 유도 주사", "20200101"))
+            add(StepRegisterItem("배란 유도 주사", "20200101"))
+            add(StepRegisterItem("배란 유도 주사", "20200101"))
+            add(StepRegisterItem("배란 유도 주사", "20200101"))
+        }
+
+        StepRegisterAdapter = StepRegisterAdapter(this.stepRegisterList)
+        binding.stepRegisterRecyclerview.adapter = StepRegisterAdapter
+
         return binding.root
+    }
+
+    // 프래그먼트가 destroy (파괴) 될때
+    override fun onDestroyView() {
+        // 프래그먼트는 뷰보다 더 오래 살아남는다고 한다.
+        // onDestroyView 에서 binding class 인스턴스 참조를 정리해주어야 한다.
+        _binding = null
+        super.onDestroyView()
     }
 
 }

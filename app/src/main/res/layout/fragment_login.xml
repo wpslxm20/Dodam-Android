@@ -35,7 +35,8 @@
                 android:textStyle="bold"
                 android:paddingStart="25dp"
                 android:background="@drawable/edittext_login"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:maxLength="20">
             </EditText>
             <EditText
                 android:layout_width="match_parent"
@@ -45,7 +46,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:paddingStart="25dp"
-                android:background="@drawable/edittext_login">
+                android:background="@drawable/edittext_login"
+                android:maxLength="20">
             </EditText>
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_marginTop="20dp"

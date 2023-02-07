@@ -1,4 +1,4 @@
-package com.example.dodam
+package com.example.dodam.src.main.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

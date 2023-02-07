@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".src.main.home.WriteScheduleFragment"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    >
+    <!-- Layout 맨밑 줄은 뭔지 모르겠으나 추가하래서 한 거임 -->
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="30dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_schedule_kor"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            >
+        </TextView>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:layout_width="26dp"
+                android:layout_height="18dp"
+                android:src="@drawable/write_schedule_schedule_image"
+                android:scaleType="fitCenter">
+            </androidx.constraintlayout.utils.widget.ImageFilterView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/schedule_kor"
+                android:textSize="14sp">
+            </TextView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:layout_width="26dp"
+                android:layout_height="18dp"
+                android:src="@drawable/write_schedule_repeat_image"
+                android:scaleType="fitCenter">
+            </androidx.constraintlayout.utils.widget.ImageFilterView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/repeat_kor"
+                android:textSize="14sp">
+            </TextView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>
