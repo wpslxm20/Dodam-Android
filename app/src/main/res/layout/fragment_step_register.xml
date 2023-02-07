@@ -109,7 +109,7 @@
             android:layout_marginHorizontal="30dp"
             android:textSize="12sp"
             android:background="@color/white"
-            android:textColor="@color/gray"
+            android:textColor="@color/hint_text"
             android:gravity="left|center"
             />
 

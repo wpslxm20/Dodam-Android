@@ -5,11 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.dodam.R
 import com.example.dodam.databinding.FragmentHomeBinding
-import com.example.dodam.databinding.FragmentLoginBinding
-import homeStepRecycler.HomeStepAdapter
-import homeStepRecycler.HomeStepItem
+import com.example.dodam.src.main.home.homeStepRecycler.HomeStepAdapter
+import com.example.dodam.src.main.home.homeStepRecycler.HomeStepItem
 
 
 class HomeFragment : Fragment() {
