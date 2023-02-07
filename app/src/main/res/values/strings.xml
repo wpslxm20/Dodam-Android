@@ -46,6 +46,10 @@
     <string name="step_date">2022년 12월 31일</string>
     <string name="new_step_add">+ 새로운 단계 추가하기</string>
 
-
-
+    <!-- Write Schedule Fragment-->
+    <string name="register_schedule_kor">일정 등록</string>
+    <string name="schedule_kor">일정</string>
+    <string name="repeat_kor">반복</string>
+    <string name="time_kor">시간</string>
+    <string name="color_kor">색깔</string>
 </resources>
