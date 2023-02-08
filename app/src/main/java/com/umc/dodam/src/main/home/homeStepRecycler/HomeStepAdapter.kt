@@ -1,12 +1,12 @@
-package com.example.dodam.src.main.home.homeStepRecycler
+package com.umc.dodam.src.main.home.homeStepRecycler
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dodam.R
-import com.example.dodam.databinding.HomeStepItemBinding
+import com.umc.dodam.R
+import com.umc.dodam.databinding.HomeStepItemBinding
 
 class HomeStepAdapter(val stepList: List<HomeStepItem>): RecyclerView.Adapter<HomeStepAdapter.ViewHolder>(){
 
