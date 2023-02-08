@@ -87,6 +87,7 @@
             android:gravity="center"
             android:layout_marginTop="40dp">
             <ImageButton
+                android:id="@+id/btn_login_kakao"
                 android:layout_width="49dp"
                 android:layout_height="49dp"
                 android:src="@drawable/kakakotalk_login_button_image"
@@ -95,6 +96,7 @@
                 android:layout_marginHorizontal="25dp">
             </ImageButton>
             <ImageButton
+                android:id="@+id/btn_login_google"
                 android:layout_width="49dp"
                 android:layout_height="49dp"
                 android:src="@drawable/google_login_button_image"
