@@ -1,4 +1,4 @@
-package com.example.dodam.src.main.myPage
+package com.umc.dodam.src.main.myPage
 
 import android.os.Bundle
 import android.util.Log
@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import com.example.dodam.R
-import com.example.dodam.databinding.FragmentMyPageBinding
+import com.umc.dodam.R
+import com.umc.dodam.databinding.FragmentMyPageBinding
 
 class MyPageFragment : Fragment() {
 

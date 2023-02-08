@@ -1,4 +1,4 @@
-package com.example.dodam.src.main.home.homeStepRecycler
+package com.umc.dodam.src.main.home.homeStepRecycler
 
 data class HomeStepItem (
     var stepName: String = "",
