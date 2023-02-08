@@ -9,7 +9,11 @@
     <string name="password_kor">비밀번호</string>
     <string name="signup_kor">회원가입</string>
     <string name="login_kor">로그인</string>
+
+    <!-- MedicalRecord Fragment -->
     <string name="medical_record_kor">진료기록</string>
+    <string name="save_kor">저장</string>
+    <string name="today_schedule_kor">오늘의 일정</string>
 
     <!-- Home Fragment -->
     <string name="step_register">단계 등록</string>
@@ -42,6 +46,10 @@
     <string name="step_date">2022년 12월 31일</string>
     <string name="new_step_add">+ 새로운 단계 추가하기</string>
 
-
-
+    <!-- Write Schedule Fragment-->
+    <string name="register_schedule_kor">일정 등록</string>
+    <string name="schedule_kor">일정</string>
+    <string name="repeat_kor">반복</string>
+    <string name="time_kor">시간</string>
+    <string name="color_kor">색깔</string>
 </resources>

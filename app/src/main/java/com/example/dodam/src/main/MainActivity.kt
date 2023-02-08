@@ -5,10 +5,13 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+//import androidx.navigation.NavController
+//import androidx.navigation.fragment.NavHostFragment
 import com.example.dodam.R
 import com.example.dodam.databinding.ActivityMainBinding
 import com.example.dodam.src.main.diary.DiaryFragment
 import com.example.dodam.src.main.home.HomeFragment
+import com.example.dodam.src.main.home.MedicalRecordFragment
 import com.example.dodam.src.main.home.StepRegisterFragment
 import com.example.dodam.src.main.myPage.SignInFragment
 
@@ -47,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.menu_home -> {
                         supportFragmentManager
                             .beginTransaction()
-                            .replace(R.id.nav_host_fragment, StepRegisterFragment())
+                            .replace(R.id.nav_host_fragment, MedicalRecordFragment())
                             .commitAllowingStateLoss()
                         Log.d("msg", "menu_home work")
                     }
