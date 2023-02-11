@@ -1,16 +1,13 @@
-package com.example.dodam.src.main.home
+package com.umc.dodam.src.main.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.dodam.databinding.FragmentHomeBinding
-import com.example.dodam.databinding.FragmentStepRegisterBinding
-import com.example.dodam.src.main.home.homeStepRecycler.HomeStepAdapter
-import com.example.dodam.src.main.home.homeStepRecycler.HomeStepItem
-import com.example.dodam.src.main.home.homeStepRegisterRecycler.StepRegisterAdapter
-import com.example.dodam.src.main.home.homeStepRegisterRecycler.StepRegisterItem
+import com.umc.dodam.databinding.FragmentStepRegisterBinding
+import com.umc.dodam.src.main.home.homeStepRegisterRecycler.StepRegisterAdapter
+import com.umc.dodam.src.main.home.homeStepRegisterRecycler.StepRegisterItem
 
 class StepRegisterFragment : Fragment() {
 

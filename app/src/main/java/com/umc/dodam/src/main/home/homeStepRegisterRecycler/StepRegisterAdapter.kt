@@ -1,17 +1,12 @@
-package com.example.dodam.src.main.home.homeStepRegisterRecycler
+package com.umc.dodam.src.main.home.homeStepRegisterRecycler
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewParent
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dodam.R
-import com.example.dodam.databinding.FragmentStepRegisterBinding
-import com.example.dodam.databinding.HomeStepItemBinding
-import com.example.dodam.databinding.StepRegisterItemBinding
-import com.example.dodam.src.main.home.homeStepRecycler.HomeStepAdapter
+import com.umc.dodam.R
+import com.umc.dodam.databinding.StepRegisterItemBinding
 
 class StepRegisterAdapter (val data: List<StepRegisterItem>): RecyclerView.Adapter<StepRegisterAdapter.ViewHolder>() {
     lateinit var binding: StepRegisterItemBinding

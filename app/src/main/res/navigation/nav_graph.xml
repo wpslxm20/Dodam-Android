@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/diaryFragment"
-        android:name="com.example.dodam.src.main.diary.DiaryFragment"
+        android:name="com.umc.dodam.src.main.diary.DiaryFragment"
         android:label="fragment_diary"
         tools:layout="@layout/fragment_diary" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.dodam.src.main.home.HomeFragment"
+        android:name="com.umc.dodam.src.main.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/myPageFragment"
-        android:name="com.example.dodam.src.main.myPage.MyPageFragment"
+        android:name="com.umc.dodam.src.main.myPage.MyPageFragment"
         android:label="fragment_my_page"
         tools:layout="@layout/fragment_my_page" >
         <action
@@ -37,12 +37,12 @@
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.dodam.src.main.myPage.SignInFragment"
+        android:name="com.umc.dodam.src.main.myPage.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" />
     <fragment
         android:id="@+id/stepRegisterFragment"
-        android:name="com.example.dodam.src.main.home.StepRegisterFragment"
+        android:name="com.umc.dodam.src.main.home.StepRegisterFragment"
         android:label="fragment_step_register"
         tools:layout="@layout/fragment_step_register" />
 </navigation>

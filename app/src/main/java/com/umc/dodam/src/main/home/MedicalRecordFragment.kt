@@ -1,12 +1,11 @@
-package com.example.dodam.src.main.home
+package com.umc.dodam.src.main.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.dodam.databinding.FragmentLoginBinding
-import com.example.dodam.databinding.FragmentMedicalRecordBinding
+import com.umc.dodam.databinding.FragmentMedicalRecordBinding
 
 
 class MedicalRecordFragment : Fragment() {

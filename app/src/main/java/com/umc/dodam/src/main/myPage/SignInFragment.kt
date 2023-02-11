@@ -1,12 +1,11 @@
-package com.example.dodam.src.main.myPage
+package com.umc.dodam.src.main.myPage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.dodam.R
-import com.example.dodam.databinding.FragmentSignInBinding
+import com.umc.dodam.databinding.FragmentSignInBinding
 
 class SignInFragment : Fragment(){
 

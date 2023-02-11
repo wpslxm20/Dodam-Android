@@ -1,15 +1,14 @@
-package com.example.dodam.src.main.home
+package com.umc.dodam.src.main.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresPermission.Write
-import com.example.dodam.R
-import com.example.dodam.databinding.FragmentHomeBinding
-import com.example.dodam.src.main.home.homeStepRecycler.HomeStepAdapter
-import com.example.dodam.src.main.home.homeStepRecycler.HomeStepItem
+import com.umc.dodam.R
+import com.umc.dodam.databinding.FragmentHomeBinding
+import com.umc.dodam.src.main.home.homeStepRecycler.HomeStepAdapter
+import com.umc.dodam.src.main.home.homeStepRecycler.HomeStepItem
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 

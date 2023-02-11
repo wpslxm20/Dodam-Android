@@ -1,19 +1,23 @@
-package com.example.dodam.src.main
+package com.umc.dodam.src.main
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.kakao.sdk.common.KakaoSdk
 //import androidx.navigation.NavController
 //import androidx.navigation.fragment.NavHostFragment
-import com.example.dodam.R
-import com.example.dodam.databinding.ActivityMainBinding
-import com.example.dodam.src.main.diary.DiaryFragment
-import com.example.dodam.src.main.home.HomeFragment
-import com.example.dodam.src.main.home.MedicalRecordFragment
-import com.example.dodam.src.main.home.StepRegisterFragment
-import com.example.dodam.src.main.myPage.SignInFragment
+import com.umc.dodam.R
+import com.umc.dodam.databinding.ActivityMainBinding
+import com.umc.dodam.src.main.diary.DiaryFragment
+import com.umc.dodam.src.main.home.HomeFragment
+import com.umc.dodam.src.main.home.MedicalRecordFragment
+import com.umc.dodam.src.main.myPage.LoginFragment
+import com.kakao.sdk.common.util.Utility
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //카카오톡 sdk 초기화
+        KakaoSdk.init(this,getString(R.string.kakao_app_key))
 
         // 앱을 시작할 때, 초기 화면을 Home으로 설정
         supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, HomeFragment()).commitAllowingStateLoss()
@@ -63,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.sign_in -> {
                         supportFragmentManager
                             .beginTransaction()
-                            .replace(R.id.nav_host_fragment, SignInFragment())
+                            .replace(R.id.nav_host_fragment, LoginFragment())
                             .commitAllowingStateLoss()
                     }
                 }
