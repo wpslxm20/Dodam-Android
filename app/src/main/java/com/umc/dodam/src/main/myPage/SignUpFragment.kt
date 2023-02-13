@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.umc.dodam.databinding.FragmentSignInBinding
+import com.umc.dodam.databinding.FragmentSignUpBinding
 
-class SignInFragment : Fragment(){
+class SignUpFragment : Fragment(){
 
-    private lateinit var binding: FragmentSignInBinding
+    private lateinit var binding: FragmentSignUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class SignInFragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSignInBinding.inflate(layoutInflater)
+        binding = FragmentSignUpBinding.inflate(layoutInflater)
         return binding.root
     }
 

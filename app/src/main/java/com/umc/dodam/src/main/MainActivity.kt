@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         //카카오톡 sdk 초기화
         KakaoSdk.init(this,getString(R.string.kakao_app_key))
+//        val keyHash = Utility.getKeyHash(this)
+//        Log.d("Hash", keyHash)
 
         // 앱을 시작할 때, 초기 화면을 Home으로 설정
         supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, HomeFragment()).commitAllowingStateLoss()
