@@ -16,8 +16,7 @@ import com.umc.dodam.src.main.home.HomeFragment
 import com.umc.dodam.src.main.home.MedicalRecordFragment
 import com.umc.dodam.src.main.myPage.LoginFragment
 import com.kakao.sdk.common.util.Utility
-
-
+import com.umc.dodam.src.main.home.WriteScheduleFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.menu_home -> {
                         supportFragmentManager
                             .beginTransaction()
-                            .replace(R.id.nav_host_fragment, MedicalRecordFragment())
+                            .replace(R.id.nav_host_fragment, WriteScheduleFragment())
                             .commitAllowingStateLoss()
                         Log.d("msg", "menu_home work")
                     }

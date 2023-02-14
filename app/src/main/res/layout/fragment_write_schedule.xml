@@ -9,59 +9,314 @@
     >
     <!-- Layout 맨밑 줄은 뭔지 모르겠으나 추가하래서 한 거임 -->
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginHorizontal="30dp">
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="30dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="@string/register_schedule_kor"
+                android:textColor="@color/black"
+                android:textSize="16sp"></TextView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="26dp"
+                    android:layout_height="18dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/write_schedule_schedule_image"></androidx.constraintlayout.utils.widget.ImageFilterView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/schedule_kor"
+                    android:textColor="@color/write_schedule_text"
+                    android:textSize="14sp"></TextView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/write_schedule_split_border_image">
+
+            </androidx.constraintlayout.utils.widget.ImageFilterView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="26dp"
+                    android:layout_height="18dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/write_schedule_repeat_image"></androidx.constraintlayout.utils.widget.ImageFilterView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/repeat_kor"
+                    android:textColor="@color/write_schedule_text"
+                    android:textSize="14sp"></TextView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/write_schedule_radio_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp"
+                    android:text="날짜 선택"
+                    android:textColor="@color/write_schedule_text"
+                    android:textSize="11sp"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/write_schedule_radio_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp"
+                    android:text="매주"
+                    android:textColor="@color/write_schedule_text"
+                    android:textSize="11sp"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/write_schedule_radio_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp"
+                    android:text="격주"
+                    android:textColor="@color/write_schedule_text"
+                    android:textSize="11sp"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/write_schedule_radio_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp"
+                    android:text="3주"
+                    android:textColor="@color/write_schedule_text"
+                    android:textSize="11sp"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/write_schedule_radio_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp"
+                    android:text="한달"
+                    android:textColor="@color/write_schedule_text"
+                    android:textSize="11sp"></RadioButton>
+
+            </RadioGroup>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="26dp"
+                    android:layout_height="18dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/write_schedule_time_image"></androidx.constraintlayout.utils.widget.ImageFilterView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/time_kor"
+                    android:textColor="@color/write_schedule_text"
+                    android:textSize="14sp"></TextView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/write_schedule_time_border"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="25dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/start_time_kor"
+                        android:textColor="@color/write_schedule_text"
+                        android:textSize="11sp"></TextView>
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/write_schedule_time_line"></androidx.constraintlayout.utils.widget.ImageFilterView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/write_schedule_time_num_border"
+                        android:gravity="center_vertical"
+                        android:text="오전"
+                        android:textSize="9sp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/write_schedule_time_num_border"
+                        android:gravity="center_vertical"
+                        android:text="10"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="-2dp"
+                        android:gravity="center_vertical"
+                        android:text=":"
+                        android:textSize="18sp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/write_schedule_time_num_border"
+                        android:gravity="center_vertical"
+                        android:text="40"
+                        android:textSize="12sp"></TextView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/end_time_kor"
+                        android:textColor="@color/write_schedule_text"
+                        android:textSize="11sp"></TextView>
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/write_schedule_time_line"></androidx.constraintlayout.utils.widget.ImageFilterView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/write_schedule_time_num_border"
+                        android:gravity="center_vertical"
+                        android:text="오전"
+                        android:textSize="9sp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/write_schedule_time_num_border"
+                        android:gravity="center_vertical"
+                        android:text="10"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="-2dp"
+                        android:gravity="center_vertical"
+                        android:text=":"
+                        android:textSize="18sp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/write_schedule_time_num_border"
+                        android:gravity="center_vertical"
+                        android:text="40"
+                        android:textSize="12sp"></TextView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <!--            <TimePicker-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:timePickerMode="spinner"-->
+                <!--                android:theme="@style/writeScheduleTimePicker"/>-->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/register_schedule_kor"
-            android:layout_gravity="center"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:layout_marginTop="30dp"
-            >
-        </TextView>
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp">
-            <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:layout_width="26dp"
-                android:layout_height="18dp"
-                android:src="@drawable/write_schedule_schedule_image"
-                android:scaleType="fitCenter">
-            </androidx.constraintlayout.utils.widget.ImageFilterView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/schedule_kor"
-                android:textSize="14sp">
-            </TextView>
+            android:text="@string/color_kor"
+            android:textColor="@color/write_schedule_text"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="520dp"></TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp">
-            <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:layout_width="26dp"
-                android:layout_height="18dp"
-                android:src="@drawable/write_schedule_repeat_image"
-                android:scaleType="fitCenter">
-            </androidx.constraintlayout.utils.widget.ImageFilterView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/repeat_kor"
-                android:textSize="14sp">
-            </TextView>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </FrameLayout>
