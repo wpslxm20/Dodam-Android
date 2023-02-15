@@ -51,7 +51,20 @@
     <string name="schedule_kor">일정</string>
     <string name="repeat_kor">반복</string>
     <string name="time_kor">시간</string>
+    <string name="date_select_kor">날짜 선택</string>
     <string name="color_kor">색깔</string>
     <string name="start_time_kor">시작 시간</string>
     <string name="end_time_kor">종료 시간</string>
+    <string name="every_week_kor">매주</string>
+    <string name="every_two_week_kor">격주</string>
+    <string name="every_three_week_kor">3주</string>
+    <string name="every_month_kor">한달</string>
+    <string name="monday_kor">월요일</string>
+    <string name="tuesday_kor">화요일</string>
+    <string name="wednesday_kor">수요일</string>
+    <string name="thursday_kor">목요일</string>
+    <string name="friday_kor">금요일</string>
+    <string name="saturday_kor">토요일</string>
+    <string name="sunday_kor">일요일</string>
+
 </resources>

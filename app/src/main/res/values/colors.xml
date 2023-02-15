@@ -11,4 +11,8 @@
     <color name="hint_text">#C3C3C3</color>
     <color name="home_step_text">#A8A8A8</color>
     <color name="write_schedule_text">#727272</color>
+    <color name="write_schedule_color1">#F3CAF7</color>
+    <color name="write_schedule_color2">#D1BBFF</color>
+    <color name="write_schedule_color3">#D9DAFD</color>
+    <color name="write_schedule_color4">#CEEAFE</color>
 </resources>
