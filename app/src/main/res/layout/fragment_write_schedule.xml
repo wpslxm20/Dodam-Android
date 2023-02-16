@@ -162,7 +162,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:visibility="gone">
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -172,7 +173,7 @@
                         android:layout_width="26dp"
                         android:layout_height="18dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/write_schedule_data_select_image"></androidx.constraintlayout.utils.widget.ImageFilterView>
+                        android:src="@drawable/write_schedule_date_select_image"></androidx.constraintlayout.utils.widget.ImageFilterView>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -193,7 +194,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableBottom="@drawable/write_schedule_date_select_image"
+                    android:drawableBottom="@drawable/gradation_underline"
                     android:text="2023/01/17"
                     android:textColor="@color/black"
                     android:layout_marginTop="10dp"
@@ -207,14 +208,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:visibility="gone">
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/rgroup_day_of_week"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <RadioButton
-                        android:id="@+id/rbtn_monday"
+                    <CheckBox
+                        android:id="@+id/check_monday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/write_schedule_day_of_week_selector"
@@ -225,9 +227,9 @@
                         android:text="@string/monday_kor"
                         android:textColor="@color/write_schedule_text"
                         android:textSize="11sp"
-                        android:layout_marginRight="5dp"></RadioButton>
-                    <RadioButton
-                        android:id="@+id/rbtn_tuesday"
+                        android:layout_marginRight="8dp"></CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_tuesday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/write_schedule_day_of_week_selector"
@@ -238,9 +240,9 @@
                         android:text="@string/tuesday_kor"
                         android:textColor="@color/write_schedule_text"
                         android:textSize="11sp"
-                        android:layout_marginRight="5dp"></RadioButton>
-                    <RadioButton
-                        android:id="@+id/rbtn_wednesday"
+                        android:layout_marginRight="8dp"></CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_wednesday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/write_schedule_day_of_week_selector"
@@ -251,9 +253,9 @@
                         android:text="@string/wednesday_kor"
                         android:textColor="@color/write_schedule_text"
                         android:textSize="11sp"
-                        android:layout_marginRight="5dp"></RadioButton>
-                    <RadioButton
-                        android:id="@+id/rbtn_thursday"
+                        android:layout_marginRight="8dp"></CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_thursday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/write_schedule_day_of_week_selector"
@@ -264,9 +266,9 @@
                         android:text="@string/thursday_kor"
                         android:textColor="@color/write_schedule_text"
                         android:textSize="11sp"
-                        android:layout_marginRight="5dp"></RadioButton>
-                    <RadioButton
-                        android:id="@+id/rbtn_friday"
+                        android:layout_marginRight="8dp"></CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_friday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/write_schedule_day_of_week_selector"
@@ -277,9 +279,9 @@
                         android:text="@string/friday_kor"
                         android:textColor="@color/write_schedule_text"
                         android:textSize="11sp"
-                        android:layout_marginRight="5dp"></RadioButton>
-                    <RadioButton
-                        android:id="@+id/rbtn_saturday"
+                        android:layout_marginRight="8dp"></CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_saturday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/write_schedule_day_of_week_selector"
@@ -290,9 +292,9 @@
                         android:text="@string/saturday_kor"
                         android:textColor="@color/write_schedule_text"
                         android:textSize="11sp"
-                        android:layout_marginRight="5dp"></RadioButton>
-                    <RadioButton
-                        android:id="@+id/rbtn_sunday"
+                        android:layout_marginRight="8dp"></CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_sunday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/write_schedule_day_of_week_selector"
@@ -303,7 +305,7 @@
                         android:text="@string/sunday_kor"
                         android:textColor="@color/write_schedule_text"
                         android:textSize="11sp"
-                        android:layout_marginRight="5dp"></RadioButton>
+                        android:layout_marginRight="8dp"></CheckBox>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -334,40 +336,39 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="5dp"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     >
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:hint="@string/start_date_kor"
+                        android:textColorHint="@color/write_schedule_hint_text"
                         android:textColor="@color/black"
                         android:textSize="10sp"
                         android:drawableEnd="@drawable/write_schedule_calender_image_resize"
                         android:drawablePadding="2dp"
-                        android:drawableBottom="@drawable/write_schedule_date_select_image"
+                        android:drawableBottom="@drawable/gradation_underline"
                         >
                     </TextView>
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:text="-"
                         android:textSize="20sp"
                         android:textColor="@color/write_schedule_text"
-                        android:layout_weight="0.5"
                         android:gravity="center">
 
                     </TextView>
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:hint="@string/end_date_kor"
+                        android:textColorHint="@color/write_schedule_hint_text"
                         android:textColor="@color/black"
                         android:textSize="10sp"
                         android:drawableEnd="@drawable/write_schedule_calender_image_resize"
                         android:drawablePadding="2dp"
-                        android:drawableBottom="@drawable/write_schedule_date_select_image"
+                        android:drawableBottom="@drawable/gradation_underline"
                         >
                     </TextView>
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -541,27 +542,68 @@
             app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"
             app:layout_constraintTop_toTopOf="parent"></TextView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_write_schedule_color"
+        <RadioGroup
+            android:id="@+id/rgroup_color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/write_schedule_color_item"
-            android:orientation="horizontal"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="15dp">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_marginLeft="20dp">
+
+            <RadioButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:button="@null"
+                android:background="@color/write_schedule_color1"
+                android:layout_marginRight="10dp">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:button="@null"
+                android:background="@color/write_schedule_color2"
+                android:layout_marginRight="10dp">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:button="@null"
+                android:background="@color/write_schedule_color3"
+                android:layout_marginRight="10dp">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:button="@null"
+                android:background="@color/write_schedule_color4"
+                android:layout_marginRight="10dp">
+            </RadioButton>
+
+
+        </RadioGroup>
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rv_write_schedule_color"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--            tools:listitem="@layout/write_schedule_color_item"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginLeft="15dp">-->
+<!--        </androidx.recyclerview.widget.RecyclerView>-->
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/view_medical_record_save_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:background="@drawable/medical_record_save_btn_image"
             app:layout_constraintEnd_toEndOf="@+id/linearLayoutCompat"
-            app:layout_constraintTop_toBottomOf="@+id/rv_write_schedule_color">
+            app:layout_constraintTop_toBottomOf="@+id/rgroup_color"
+            android:layout_marginTop="40dp">
 
             <Button
                 android:id="@+id/btn_medical_record_save"

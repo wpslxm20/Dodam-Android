@@ -69,4 +69,9 @@
     <string name="period_select_kor">기간 선택</string>
     <string name="start_date_kor">시작 날짜</string>
     <string name="end_date_kor">종료 날짜</string>
+
+    <!-- Write Diary Fragment -->
+    <string name="diary_eng">Diary</string>
+    <string name="title_hint_kor">제목을 입력하세요</string>
+    <string name="content_hint_kor">내용을 입력하세요</string>
 </resources>

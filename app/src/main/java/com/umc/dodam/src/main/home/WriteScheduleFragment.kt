@@ -20,8 +20,8 @@ class WriteScheduleFragment() : BottomSheetDialogFragment(){
     private var _binding: FragmentWriteScheduleBinding? = null
     private val binding get() = _binding!!
 
-    lateinit var writeScheduleColorAdapter: WriteScheduleColorAdapter
-    val colorList = mutableListOf<Int>()
+//    lateinit var writeScheduleColorAdapter: WriteScheduleColorAdapter
+//    val colorList = mutableListOf<Int>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,19 +34,24 @@ class WriteScheduleFragment() : BottomSheetDialogFragment(){
         binding.rgroupRepeat.setOnCheckedChangeListener { group, checkedId ->
             when(checkedId){
                 binding.rbtnDateSelect.id -> {
-                    binding.viewDateSelect.isVisible
+                    binding.viewDateSelect.isVisible = true
+                    binding.viewRepeat.isGone = true
+                }
+                else -> {
+                    binding.viewRepeat.isVisible = true
+                    binding.viewDateSelect.isGone = true
                 }
             }
         }
 
         // 색깔 리스트
-        colorList.add(R.color.write_schedule_color1)
-        colorList.add(R.color.write_schedule_color2)
-        colorList.add(R.color.write_schedule_color3)
-        colorList.add(R.color.write_schedule_color4)
+//        colorList.add(R.color.write_schedule_color1)
+//        colorList.add(R.color.write_schedule_color2)
+//        colorList.add(R.color.write_schedule_color3)
+//        colorList.add(R.color.write_schedule_color4)
 
-        writeScheduleColorAdapter = WriteScheduleColorAdapter(requireContext(), colorList)
-        binding.rvWriteScheduleColor.adapter = writeScheduleColorAdapter
+//        writeScheduleColorAdapter = WriteScheduleColorAdapter(requireContext(), colorList)
+//        binding.rvWriteScheduleColor.adapter = writeScheduleColorAdapter
         return view
     }
     override fun onDestroyView() {
