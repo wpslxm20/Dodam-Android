@@ -57,8 +57,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_title"></TextView>
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/view_content"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="300dp"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/tv_date"
             android:background="@drawable/medical_record_edittext_border">
@@ -103,7 +104,65 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/view_ps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/write_diary_ps_title_background_image"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/ps_kor"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:textSize="15sp">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="00"
+                android:textStyle="bold"
+                android:textSize="15sp">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="에게"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginLeft="2dp">
+            </TextView>
+            <CheckBox
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/write_diary_ps_selector"
+                android:button="@null"
+                ></CheckBox>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/view_ps"
+            app:layout_constraintStart_toStartOf="parent"></EditText>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view_ps"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

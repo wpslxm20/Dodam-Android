@@ -74,4 +74,5 @@
     <string name="diary_eng">Diary</string>
     <string name="title_hint_kor">제목을 입력하세요</string>
     <string name="content_hint_kor">내용을 입력하세요</string>
+    <string name="ps_kor">ps.</string>
 </resources>
