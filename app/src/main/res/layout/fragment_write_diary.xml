@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".writeDiaryFragment">
+    tools:context=".src.main.diary.writeDiaryFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -89,13 +89,13 @@
                     android:layout_marginHorizontal="15dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/write_diary_camera_image"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></androidx.constraintlayout.utils.widget.ImageFilterButton>
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"></androidx.constraintlayout.utils.widget.ImageFilterButton>
 
                 <androidx.constraintlayout.utils.widget.ImageFilterButton
                     android:id="@+id/imageFilterButton"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/write_diary_delete_image_btn_image"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -104,65 +104,170 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/view_ps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/view_content"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/write_diary_ps_title_background_image"
-            android:gravity="center"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="@string/ps_kor"
-                android:textStyle="bold"
-                android:layout_marginRight="5dp"
-                android:textSize="15sp">
-            </TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="00"
-                android:textStyle="bold"
-                android:textSize="15sp">
-            </TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="에게"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:layout_marginLeft="2dp">
-            </TextView>
-            <CheckBox
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/write_diary_ps_selector"
-                android:button="@null"
-                ></CheckBox>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/view_ps"
-            app:layout_constraintStart_toStartOf="parent"></EditText>
+            app:layout_constraintTop_toBottomOf="@id/view_content"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            >
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/view_ps_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/write_diary_ps_title_background_image"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="@string/ps_kor"
+                    android:textStyle="bold"
+                    android:layout_marginRight="5dp"
+                    android:textSize="15sp">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="00"
+                    android:textStyle="bold"
+                    android:textSize="15sp">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="@string/to_kor"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="2dp">
+                </TextView>
+                <CheckBox
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/write_diary_ps_selector"
+                    android:button="@null"
+                    ></CheckBox>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/diary_leftline"
+                    android:scaleType="fitXY"
+                    >
+                </androidx.constraintlayout.utils.widget.ImageFilterView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginVertical="3dp"
+                    android:background="@null"
+                    android:hint="@string/content_hint_kor"
+                    android:textColorHint="@color/write_diary_hint_text"
+                    android:textSize="15sp"
+                    ></EditText>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/view_ps"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_ps">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today_mood_kor"
+                android:textColor="@color/black"
+                android:textSize="13sp"></TextView>
+
+            <RadioGroup
+                android:id="@+id/rgroup_mood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/mood_fine"
+                    android:button="@null"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/mood_angry"
+                    android:button="@null"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/mood_sad"
+                    android:button="@null"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/mood_tired"
+                    android:button="@null"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/mood_lovely"
+                    android:button="@null"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/mood_enjoy"
+                    android:button="@null"></RadioButton>
+            </RadioGroup>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/medical_record_save_btn_image"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save_kor"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="-5dp"
+                >
+            </TextView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

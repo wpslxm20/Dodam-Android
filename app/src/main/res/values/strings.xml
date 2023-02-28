@@ -75,4 +75,6 @@
     <string name="title_hint_kor">제목을 입력하세요</string>
     <string name="content_hint_kor">내용을 입력하세요</string>
     <string name="ps_kor">ps.</string>
+    <string name="to_kor">에게</string>
+    <string name="today_mood_kor"># 오늘의 기분을 선택해 주세요</string>
 </resources>

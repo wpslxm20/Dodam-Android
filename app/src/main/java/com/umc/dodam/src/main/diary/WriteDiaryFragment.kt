@@ -1,4 +1,4 @@
-package com.umc.dodam
+package com.umc.dodam.src.main.diary
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
