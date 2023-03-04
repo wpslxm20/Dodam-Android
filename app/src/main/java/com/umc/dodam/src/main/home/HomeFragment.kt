@@ -53,13 +53,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.btnGoWriteSchedule.setOnClickListener(){
-//            val writeScheduleView = layoutInflater.inflate(R.layout.fragment_write_schedule, null)
-//            val writeScheduleDialog = BottomSheetDialog(requireContext())
-//            writeScheduleDialog.setContentView(writeScheduleView)
-//
-//            writeScheduleDialog.show()
-//        }
+        binding.btnGoWriteShedule.setOnClickListener(){
+            val writeScheduleView = layoutInflater.inflate(R.layout.fragment_write_schedule, null)
+            val writeScheduleDialog = BottomSheetDialog(requireContext())
+            writeScheduleDialog.setContentView(writeScheduleView)
+
+            writeScheduleDialog.show()
+        }
     }
     // 프래그먼트가 destroy (파괴) 될때
     override fun onDestroyView() {
