@@ -16,8 +16,7 @@ import com.umc.dodam.src.main.home.HomeFragment
 import com.umc.dodam.src.main.home.MedicalRecordFragment
 import com.umc.dodam.src.main.myPage.LoginFragment
 import com.kakao.sdk.common.util.Utility
-
-
+import com.umc.dodam.src.main.home.WriteScheduleFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 
         //카카오톡 sdk 초기화
         KakaoSdk.init(this,getString(R.string.kakao_app_key))
+//        val keyHash = Utility.getKeyHash(this)
+//        Log.d("Hash", keyHash)
 
         // 앱을 시작할 때, 초기 화면을 Home으로 설정
         supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, HomeFragment()).commitAllowingStateLoss()
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.menu_home -> {
                         supportFragmentManager
                             .beginTransaction()
-                            .replace(R.id.nav_host_fragment, MedicalRecordFragment())
+                            .replace(R.id.nav_host_fragment, WriteScheduleFragment())
                             .commitAllowingStateLoss()
                         Log.d("msg", "menu_home work")
                     }

@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.umc.dodam.src.main.myPage.SignInFragment"
+        android:name="com.umc.dodam.src.main.myPage.SignUpFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" />
     <fragment
