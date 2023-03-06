@@ -2,6 +2,7 @@ package com.umc.dodam.src.main.home
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -116,7 +117,6 @@ class HomeFragment : Fragment() {
 
         //레이아웃 설정(열 7개)
         binding.rvCalenderDay.layoutManager = GridLayoutManager(requireContext(), 7)
-
         binding.rvCalenderDay.adapter = CalenderAdapter(dayList)
     }
 
@@ -133,8 +133,11 @@ class HomeFragment : Fragment() {
         val firstDay: LocalDate = selectedDate.withDayOfMonth(1);
 
         //첫번째 날 요일 가져오기
-        val dayOfWeek: Int = firstDay.dayOfWeek.getValue()
+        var dayOfWeek: Int = firstDay.dayOfWeek.value
 
+        if(dayOfWeek==7) dayOfWeek = 0
+
+        Log.d("dayOfWeek", dayOfWeek.toString())
         for(i: Int in 1..41){
             // 날짜가 없는 칸엔 빈 칸으로 채워넣기
             if (i <= dayOfWeek || i > lastDay + dayOfWeek){
