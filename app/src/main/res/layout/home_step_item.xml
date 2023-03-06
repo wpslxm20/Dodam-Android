@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:text="배란 유도 주사"
         android:textSize="10dp"
-        android:paddingHorizontal="15dp"
+        android:paddingHorizontal="10dp"
         android:textColor="@color/home_step_text"
         android:id="@+id/step_name">
     </TextView>

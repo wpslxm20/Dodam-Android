@@ -10,12 +10,15 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.umc.dodam.R
 import com.umc.dodam.databinding.FragmentHomeBinding
 import com.umc.dodam.src.main.home.homeStepRecycler.HomeStepAdapter
 import com.umc.dodam.src.main.home.homeStepRecycler.HomeStepItem
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.umc.dodam.src.main.home.homeCalenderRecycler.CalenderAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 import java.time.LocalDate
 import java.time.Month
 import java.time.YearMonth
@@ -69,12 +72,16 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //달력 내부의 플러스 버튼을 누르면 일정등록페이지로 이동
         binding.btnGoWriteShedule.setOnClickListener(){
             val writeScheduleView = layoutInflater.inflate(R.layout.fragment_write_schedule, null)
             val writeScheduleDialog = BottomSheetDialog(requireContext())
             writeScheduleDialog.setContentView(writeScheduleView)
 
             writeScheduleDialog.show()
+            val bottomSheetFragment = WriteScheduleFragment()
+            bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
+
         }
 
         //월 텍스트뷰 세팅
@@ -148,4 +155,5 @@ class HomeFragment : Fragment() {
         }
         return dayList
     }
+
 }
