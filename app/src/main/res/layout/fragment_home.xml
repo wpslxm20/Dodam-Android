@@ -117,7 +117,7 @@
                 android:layout_marginHorizontal="10dp">
 
                 <androidx.constraintlayout.utils.widget.ImageFilterButton
-                    android:id="@+id/imageFilterButton4"
+                    android:id="@+id/btn_prev"
                     android:layout_width="15dp"
                     android:layout_height="17dp"
                     android:scaleType="fitXY"
@@ -141,6 +141,7 @@
                     />
 
                 <androidx.constraintlayout.utils.widget.ImageFilterButton
+                    android:id="@+id/btn_next"
                     android:layout_width="15dp"
                     android:layout_height="17dp"
                     android:scaleType="fitXY"
