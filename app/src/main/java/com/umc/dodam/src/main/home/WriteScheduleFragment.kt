@@ -81,7 +81,7 @@ class WriteScheduleFragment() : BottomSheetDialogFragment(){
         return dialog
     }
 
-    //여기서부터 getWindowHeight()까지 프래그먼트 크기 조절
+//여기서부터 getWindowHeight()까지 프래그먼트 크기 조절
 //    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 ////        val dialog = BottomSheetDialog(requireContext(), theme).apply {
 ////            behavior.state = BottomSheetBehavior.STATE_EXPANDED

@@ -74,11 +74,7 @@ class HomeFragment : Fragment() {
 
         //달력 내부의 플러스 버튼을 누르면 일정등록페이지로 이동
         binding.btnGoWriteShedule.setOnClickListener(){
-            val writeScheduleView = layoutInflater.inflate(R.layout.fragment_write_schedule, null)
-            val writeScheduleDialog = BottomSheetDialog(requireContext())
-            writeScheduleDialog.setContentView(writeScheduleView)
 
-            writeScheduleDialog.show()
             val bottomSheetFragment = WriteScheduleFragment()
             bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
 
