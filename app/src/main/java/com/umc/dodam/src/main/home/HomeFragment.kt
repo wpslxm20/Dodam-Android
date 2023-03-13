@@ -1,15 +1,23 @@
 package com.umc.dodam.src.main.home
 
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.umc.dodam.R
+import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.umc.dodam.databinding.FragmentHomeBinding
 import com.umc.dodam.src.main.home.homeStepRecycler.HomeStepAdapter
 import com.umc.dodam.src.main.home.homeStepRecycler.HomeStepItem
-import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.umc.dodam.src.main.home.homeCalenderRecycler.HomeCalenderAdapter
+import kotlinx.android.synthetic.main.activity_main.*
+import java.time.LocalDate
+import java.time.YearMonth
+import java.time.format.DateTimeFormatter
 
 
 class HomeFragment : Fragment() {
@@ -17,13 +25,19 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    // 달력을 표시하기 위한 현재 선택되어 있는 날짜(월을 표현하기 위함)
+    lateinit var selectedDate: LocalDate;
+
     //home 화면의 단계 recycler 연결
     lateinit var homeStepAdapter: HomeStepAdapter
     val homeStepList = mutableListOf<HomeStepItem>()
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //현재 날짜
+        selectedDate = LocalDate.now()
     }
 
     override fun onCreateView(
@@ -50,16 +64,33 @@ class HomeFragment : Fragment() {
         return view
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.btnGoWriteSchedule.setOnClickListener(){
-//            val writeScheduleView = layoutInflater.inflate(R.layout.fragment_write_schedule, null)
-//            val writeScheduleDialog = BottomSheetDialog(requireContext())
-//            writeScheduleDialog.setContentView(writeScheduleView)
-//
-//            writeScheduleDialog.show()
-//        }
+        //달력 내부의 플러스 버튼을 누르면 일정등록페이지로 이동
+        binding.btnGoWriteShedule.setOnClickListener(){
+
+            val bottomSheetFragment = WriteScheduleFragment()
+            bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
+
+        }
+
+        //월 텍스트뷰 세팅
+        setMonthView();
+
+        //전월, 익월 버튼
+        binding.btnPrev.setOnClickListener(){
+            selectedDate = selectedDate.minusMonths(1)
+            setMonthView()
+        }
+        binding.btnNext.setOnClickListener(){
+            selectedDate = selectedDate.plusMonths(1)
+            setMonthView()
+        }
+
+        //달력 recycler 연결
+        val calenderRecyclerView : RecyclerView = binding.rvCalenderDay
     }
     // 프래그먼트가 destroy (파괴) 될때
     override fun onDestroyView() {
@@ -68,4 +99,53 @@ class HomeFragment : Fragment() {
         _binding = null
         super.onDestroyView()
     }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun monthFromDate(date:LocalDate) : String{
+        var formatter:DateTimeFormatter = DateTimeFormatter.ofPattern("MM")
+        return date.format(formatter)
+    }
+
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setMonthView() {
+        // 년월 텍스트뷰 세팅
+        binding.tvCalenderMonth.setText(monthFromDate(selectedDate))
+
+        val dayList: ArrayList<String> = createDateArray(selectedDate)
+
+        //레이아웃 설정(열 7개)
+        binding.rvCalenderDay.layoutManager = GridLayoutManager(requireContext(), 7)
+        binding.rvCalenderDay.adapter = HomeCalenderAdapter(dayList)
+    }
+
+    //날짜 생성 메소드
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun createDateArray(date: LocalDate): ArrayList<String>{
+        val dayList: ArrayList<String> = arrayListOf()
+        val yearMonth: YearMonth = YearMonth.from(date)
+
+        //해당 월 마지막 날짜 가져오기
+        val lastDay: Int = yearMonth.lengthOfMonth();
+
+        //해당 월 첫번째 날 가져오기
+        val firstDay: LocalDate = selectedDate.withDayOfMonth(1);
+
+        //첫번째 날 요일 가져오기
+        var dayOfWeek: Int = firstDay.dayOfWeek.value
+
+        if(dayOfWeek==7) dayOfWeek = 0
+
+        Log.d("dayOfWeek", dayOfWeek.toString())
+        for(i: Int in 1..41){
+            // 날짜가 없는 칸엔 빈 칸으로 채워넣기
+            if (i <= dayOfWeek || i > lastDay + dayOfWeek){
+                dayList.add("")
+            }else{
+                dayList.add((i-dayOfWeek).toString())
+            }
+        }
+        return dayList
+    }
+
 }

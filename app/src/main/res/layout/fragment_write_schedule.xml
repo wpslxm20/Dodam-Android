@@ -535,7 +535,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="500dp"
             android:text="@string/color_kor"
             android:textColor="@color/write_schedule_text"
             android:textSize="14sp"
@@ -612,8 +612,14 @@
                 android:layout_marginTop="-8dp"
                 android:background="@color/transparency"
                 android:text="@string/save_kor"
-                android:textSize="15dp"></Button>
+                android:textSize="15dp"
+                ></Button>
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/view_medical_record_save_btn"></androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

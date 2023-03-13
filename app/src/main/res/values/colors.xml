@@ -18,4 +18,6 @@
     <color name="write_schedule_hint_text">#A8A8A8</color>
     <color name="write_diary_hint_text">#888888</color>
     <color name="write_diary_date_text">#9A9A9A</color>
+    <color name="home_calender_day_text">#333333</color>
+    <color name="red">#FF0000</color>
 </resources>

@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.menu_home -> {
                         supportFragmentManager
                             .beginTransaction()
-                            .replace(R.id.nav_host_fragment, WriteScheduleFragment())
+                            .replace(R.id.nav_host_fragment, HomeFragment())
                             .commitAllowingStateLoss()
                         Log.d("msg", "menu_home work")
                     }
