@@ -3,11 +3,9 @@ package com.umc.dodam.src.main.home.homeCalenderRecycler
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.umc.dodam.databinding.HomeCalenderItemBinding
-import kotlinx.coroutines.NonDisposableHandle.parent
 
-class CalenderAdapter (val dayList: ArrayList<String>) : RecyclerView.Adapter<CalenderAdapter.ViewHolder>() {
+class HomeCalenderAdapter (val dayList: ArrayList<String>) : RecyclerView.Adapter<HomeCalenderAdapter.ViewHolder>() {
 
     lateinit var binding: HomeCalenderItemBinding
 

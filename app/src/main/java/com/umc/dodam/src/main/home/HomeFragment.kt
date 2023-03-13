@@ -10,17 +10,12 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.umc.dodam.R
 import com.umc.dodam.databinding.FragmentHomeBinding
 import com.umc.dodam.src.main.home.homeStepRecycler.HomeStepAdapter
 import com.umc.dodam.src.main.home.homeStepRecycler.HomeStepItem
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.umc.dodam.src.main.home.homeCalenderRecycler.CalenderAdapter
+import com.umc.dodam.src.main.home.homeCalenderRecycler.HomeCalenderAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import java.time.LocalDate
-import java.time.Month
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 
@@ -30,6 +25,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    // 달력을 표시하기 위한 현재 선택되어 있는 날짜(월을 표현하기 위함)
     lateinit var selectedDate: LocalDate;
 
     //home 화면의 단계 recycler 연결
@@ -120,7 +116,7 @@ class HomeFragment : Fragment() {
 
         //레이아웃 설정(열 7개)
         binding.rvCalenderDay.layoutManager = GridLayoutManager(requireContext(), 7)
-        binding.rvCalenderDay.adapter = CalenderAdapter(dayList)
+        binding.rvCalenderDay.adapter = HomeCalenderAdapter(dayList)
     }
 
     //날짜 생성 메소드
