@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_design"
+    android:layout_gravity="center"
+    android:gravity="center_vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/step_name_image"
+            android:layout_marginRight="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/step_name"
+            android:textSize="13sp"
+            android:textColor="@color/home_step_text"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_step_name"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/gradation_under_line"
+        android:textSize="12sp"
+        android:layout_marginBottom="30dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/step_period_image"
+            android:layout_marginRight="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/step_period"
+            android:textSize="13sp"
+            android:textColor="@color/home_step_text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:id="@+id/step_period_add_start"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:background="@drawable/gradation_outline"
+            android:textSize="12sp"
+            android:layout_marginRight="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_calendar_step_add"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/btn_calendar"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"/>
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="3dp"
+            android:background="@drawable/gradation_under_line"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/step_period_add_end"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:background="@drawable/gradation_outline"
+            android:textSize="12sp"
+            android:layout_marginRight="5dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_calendar_step_add2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/btn_calendar"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_save"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:background="@drawable/btn_gradation_color"
+        android:text="@string/step_save"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textAlignment="center"/>
+
+</LinearLayout>

@@ -3,8 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.umc.dodam">
 
-
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -38,6 +36,7 @@
                     android:scheme="@string/kakao_native_key" />
             </intent-filter>
         </activity>
+
     </application>
 
     <!-- 인터넷 사용 권한 설정-->

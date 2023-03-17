@@ -41,19 +41,34 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@drawable/gradation_line"/>
+                android:background="@drawable/gradation_under_line"
+                android:layout_marginBottom="10dp"/>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_profile"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/btn_profile"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
-                />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp">
+
+                <ImageButton
+                    android:id="@+id/btn_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/ic_btn_profile"
+                    android:layout_gravity="center"
+                    />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="40dp"
+                    android:background="@drawable/ic_btn_camera"/>
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,15 +84,16 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:id="@+id/id_input"
+                    android:id="@+id/input_id"
                     android:layout_height="40dp"
                     android:hint="@string/id_hint"
                     android:textSize="12sp"
                     android:layout_weight="9"/>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_id_verify"
                     android:layout_width="wrap_content"
-                    android:background="@drawable/btn_outline"
+                    android:background="@drawable/gradation_outline"
                     android:layout_gravity="center"
                     android:layout_height="30dp"
                     android:textColor="@color/hint_text"
@@ -96,7 +112,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:id="@+id/password_input"
+                android:id="@+id/input_password"
                 android:layout_height="40dp"
                 android:hint="@string/password_hint"
                 android:textSize="12sp"/>
@@ -111,7 +127,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:id="@+id/password_check_input"
+                android:id="@+id/input_password_check"
                 android:layout_height="40dp"
                 android:hint="@string/password_check_hint"
                 android:textSize="12sp"/>
@@ -132,18 +148,19 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:id="@+id/nickname_input"
+                    android:id="@+id/input_nickname"
                     android:layout_height="40dp"
                     android:hint="@string/nickname_hint"
                     android:textSize="12sp"
                     android:layout_weight="24"/>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_nickname_verify"
                     android:layout_width="wrap_content"
                     android:layout_gravity="center"
                     android:layout_height="30dp"
                     android:text="@string/check"
-                    android:background="@drawable/btn_outline"
+                    android:background="@drawable/gradation_outline"
                     android:textColor="@color/hint_text"
                     android:layout_weight="1"
                     android:textSize="12sp"/>
@@ -165,18 +182,21 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:id="@+id/phone_number_input"
+                    android:id="@+id/input_phone_number"
                     android:layout_height="40dp"
                     android:hint="@string/phone_number_hint"
                     android:textSize="12sp"
+                    android:inputType="number"
+                    android:maxLength="11"
                     android:layout_weight="9"/>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_phone_number_varify"
                     android:layout_width="wrap_content"
                     android:layout_gravity="center"
                     android:layout_height="30dp"
-                    android:background="@drawable/btn_outline"
-                    android:text="@string/check"
+                    android:background="@drawable/gradation_outline"
+                    android:text="@string/certification_send"
                     android:textColor="@color/hint_text"
                     android:textSize="12sp"/>
 
@@ -197,19 +217,22 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:id="@+id/certification_number_input"
+                    android:id="@+id/input_certification_number"
                     android:layout_height="40dp"
                     android:textSize="12sp"
                     android:hint="@string/certification_hint"
-                    android:layout_weight="9"/>
+                    android:layout_weight="9"
+                    android:inputType="number"
+                    android:maxLength="5"/>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_certification_number_verify"
                     android:layout_width="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/btn_outline"
+                    android:background="@drawable/gradation_outline"
                     android:layout_height="30dp"
                     android:textColor="@color/hint_text"
-                    android:text="@string/check"
+                    android:text="@string/certification_check"
                     android:textSize="12sp"/>
 
             </LinearLayout>
@@ -224,15 +247,17 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:id="@+id/birth_input"
+                android:id="@+id/input_birth"
                 android:layout_height="40dp"
                 android:hint="@string/birth_hint"
-                android:textSize="12sp"/>
+                android:textSize="12sp"
+                android:inputType="number"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="@drawable/btn_backgroud"
+                android:background="@drawable/btn_gradation_color"
                 android:textColor="@color/white"
                 android:text="@string/sign_in_title"
                 android:gravity="center"

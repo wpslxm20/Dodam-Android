@@ -53,4 +53,19 @@ dependencies {
 
     // 카카오톡 소셜 로그인
     implementation "com.kakao.sdk:v2-user:2.12.1"
+
+    // Gallery에서 불러온 이미지 crop
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+
+    // Retrofit2, okHttp3, RxKotlin, gson 의존성 추가
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.0'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+
+    implementation 'com.google.code.gson:gson:2.10.1'
+
 }
