@@ -12,12 +12,18 @@ import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.umc.dodam.databinding.FragmentLoginBinding
+import com.umc.dodam.src.main.Api.RetrofitBuilder
+import com.umc.dodam.src.main.myPage.LoginApi.LoginDTO
 
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
+
+    //login 아이디, 비밀번호 선언
+    lateinit var inputLogin : LoginDTO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +42,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //카카오톡 소셜 로그인
         binding.btnLoginKakao.setOnClickListener(){
 //            val serviceTerms = listOf("service")
 //            if (UserApiClient.instance.isKakaoTalkLoginAvailable(requireContext())) {
@@ -74,7 +81,24 @@ class LoginFragment : Fragment() {
             }
         }
 
+
+        //로그인 api 연동
+        binding.btnLogin.setOnClickListener{
+            //입력된 아이디, 비밀번호 값을 가져와 LoginDTO 형식의 변수에 저장
+            inputLogin.userName = binding.tvId.text.toString()
+            inputLogin.password = binding.tvPw.text.toString()
+
+            RetrofitBuilder.api.login(inputLogin)
+        }
+
+
+
+
+
     }
+
+
+
     // 카카오계정으로 로그인 공통 callback 구성
     // 카카오톡으로 로그인 할 수 없어 카카오계정으로 로그인할 경우 사용됨
     val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
@@ -92,4 +116,6 @@ class LoginFragment : Fragment() {
         _binding = null
         super.onDestroyView()
     }
+
+
 }

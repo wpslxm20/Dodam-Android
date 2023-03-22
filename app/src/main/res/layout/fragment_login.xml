@@ -27,6 +27,7 @@
             android:gravity="center"
             android:layout_marginHorizontal="50dp">
             <EditText
+                android:id="@+id/tv_id"
                 android:layout_width="match_parent"
                 android:layout_height="43.5dp"
                 android:hint="@string/id_kor"
@@ -39,6 +40,7 @@
                 android:maxLength="20">
             </EditText>
             <EditText
+                android:id="@+id/tv_pw"
                 android:layout_width="match_parent"
                 android:layout_height="43.5dp"
                 android:hint="@string/password_kor"
@@ -57,17 +59,20 @@
                 android:background="@drawable/login_button_image"
                 android:gravity="center">
                 <Button
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
                     android:layout_marginTop="-5dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@color/transparency"
                     android:text="@string/login_kor"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     ></Button>
+
             </androidx.appcompat.widget.LinearLayoutCompat>
             <Button
+                android:id="@+id/btn_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
