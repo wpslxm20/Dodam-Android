@@ -20,4 +20,5 @@
     <color name="write_diary_date_text">#9A9A9A</color>
     <color name="home_calender_day_text">#333333</color>
     <color name="red">#FF0000</color>
+    <color name="main_purple">#D1BBFF</color>
 </resources>

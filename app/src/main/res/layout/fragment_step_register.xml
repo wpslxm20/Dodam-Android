@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".src.main.home.StepRegisterFragment">
+    tools:context=".src.main.home.RegisterStepFragment">
 
     <ImageView
         android:layout_width="200dp"
@@ -13,11 +13,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="680dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:layout_marginHorizontal="40dp"
         android:layout_gravity="bottom"
-        android:background="@drawable/step_register_background">
+        android:background="@drawable/gradation_outline">
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,8 +42,8 @@
 
         <View
             android:layout_width="50dp"
-            android:layout_height="3dp"
-            android:background="@drawable/step_setting_underline"
+            android:layout_height="4dp"
+            android:background="@drawable/gradation_under_line"
             android:layout_marginLeft="30dp"/>
 
         <LinearLayout
@@ -56,24 +57,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/start_date"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 android:layout_gravity="center"
                 android:layout_marginRight="10dp"
                 />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/text_start_date"
+                android:layout_width="120dp"
+                android:layout_height="20dp"
+                android:textSize="12sp"
                 android:text="@string/step_date"
                 android:layout_gravity="center"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gradation_outline"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_calendar"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:background="@drawable/btn_calendar"
                 android:layout_gravity="center"/>
+
+
         </LinearLayout>
 
         <TextView
@@ -89,7 +95,7 @@
         <View
             android:layout_width="50dp"
             android:layout_height="3dp"
-            android:background="@drawable/step_setting_underline"
+            android:background="@drawable/gradation_under_line"
             android:layout_marginLeft="30dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -103,15 +109,27 @@
             android:paddingVertical="10dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_new_step_add"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="22dp"
             android:text="@string/new_step_add"
             android:layout_marginHorizontal="30dp"
             android:textSize="12sp"
-            android:background="@color/white"
+            android:background="@drawable/dialog_design"
             android:textColor="@color/hint_text"
             android:gravity="left|center"
+            style="@style/Widget.AppCompat.Button.Borderless"
             />
+        
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:background="@drawable/btn_gradation_color"
+            android:text="@string/step_save"
+            android:textColor="@color/white"
+            android:layout_margin="30dp"
+            android:layout_gravity="right"/>
 
     </LinearLayout>
 

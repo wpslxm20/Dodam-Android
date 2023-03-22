@@ -13,4 +13,17 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Calender View theme -->
+    <style name="MySpinnerDatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
+        <!-- 상단 색 변경 -->
+        <item name="colorAccent">@color/white</item>
+        <!-- dialog의 배경 변경 -->
+        <item name="background">@drawable/dialog_design</item>
+        <!-- 선택한 날짜를 표시할 색상 -->
+        <item name="colorControlActivated">@color/main_purple</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <!-- 취소/확인버튼 색상 -->
+        <item name="android:textColor">@color/main_purple</item>
+    </style>
 </resources>

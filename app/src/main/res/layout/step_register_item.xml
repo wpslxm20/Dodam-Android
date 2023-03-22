@@ -12,8 +12,8 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="10dp"
-            android:layout_height="10dp"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
             android:background="@drawable/btn_moving"
             android:layout_gravity="center"
             />
@@ -34,13 +34,29 @@
             android:layout_weight="1"/>
 
         <TextView
-            android:id="@+id/step_period"
+            android:id="@+id/step_period_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/step_period"
             android:layout_gravity="right"
-            android:textSize="12sp"
-            android:layout_marginRight="10dp"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" ~ "
+            android:textSize="10sp"
+            android:layout_gravity=""
+            />
+
+        <TextView
+            android:id="@+id/step_period_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/step_period"
+            android:layout_gravity="right"
+            android:textSize="10sp"
             />
 
     </LinearLayout>

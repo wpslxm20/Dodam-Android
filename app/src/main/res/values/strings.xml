@@ -9,6 +9,7 @@
     <string name="password_kor">비밀번호</string>
     <string name="signup_kor">회원가입</string>
     <string name="login_kor">로그인</string>
+    <string name="login_please">로그인 해주세요.</string>
 
     <!-- MedicalRecord Fragment -->
     <string name="medical_record_kor">진료기록</string>
@@ -26,7 +27,7 @@
     <string name="sat">sat</string>
 
 
-    <!--SignIn Fragment-->
+    <!--SignUp Fragment-->
     <string name="sign_in_title">회원 가입</string>
     <string name="id">아이디(이메일)</string>
     <string name="check">중복 확인</string>
@@ -36,23 +37,28 @@
     <string name="phone_number">휴대폰 번호</string>
     <string name="certification_number">인증 번호</string>
     <string name="birth">생년월일</string>
-    <string name="id_hint">이메일 주소를 입력하세요</string>
-    <string name="password_hint">소문자, 대문자, 영어를 섞어서 8자 이내로 입력하세요</string>
+    <string name="id_hint">asdf1234@naver.com</string>
+    <string name="password_hint">소문자, 대문자, 특수문자(!, ., ?), 숫자를 포함해 8자 이내로 입력하세요</string>
     <string name="password_check_hint">비밀번호를 다시 입력하세요</string>
     <string name="nickname_hint">소문자, 대문자, 한글, 영어를 섞어서 5자 이내로 입력하세요</string>
     <string name="phone_number_hint">\'-\' 구분없이 입력하세요</string>
     <string name="certification_hint">인증번호 5자리를 입력하세요</string>
     <string name="birth_hint">생년월일 8자리를 입력하세요</string>
+    <string name="certification_send">인증번호 전송</string>
+    <string name="certification_check">인증번호 확인</string>
 
     <!--Step Register Fragment-->
     <string name="step_setting_and_calendar_register">단계 설정 및 일정 등록</string>
-    <string name="step_name">시술 단계 명</string>
-    <string name="step_period">시술 기간</string>
+    <string name="step_name">단계 이름</string>
+    <string name="step_period">단계 기간</string>
     <string name="calendar_register">일정 등록</string>
     <string name="step_setting">단계 설정</string>
     <string name="start_date">시작 날짜</string>
     <string name="step_date">2022년 12월 31일</string>
-    <string name="new_step_add">+ 새로운 단계 추가하기</string>
+    <string name="new_step_add">\ + 새로운 단계 추가하기</string>
+    <string name="step_modify">수정</string>
+    <string name="step_delete">삭제</string>
+    <string name="step_save">저장</string>
 
     <!-- Write Schedule Fragment-->
     <string name="register_schedule_kor">일정 등록</string>
@@ -85,4 +91,60 @@
     <string name="ps_kor">ps.</string>
     <string name="to_kor">에게</string>
     <string name="today_mood_kor"># 오늘의 기분을 선택해 주세요</string>
+
+    <!-- My Page Fragment -->
+    <string name="my_page">마이페이지</string>
+    <string name="manage_diary">다이어리 관리</string>
+    <string name="qna">문의</string>
+    <string name="member_exit">회원 탈퇴</string>
+    <string name="period">D + 2</string>
+    <string name="logout">로그아웃</string>
+
+    <!-- Modify Information Fragment -->
+    <string name="modify_information">회원 정보 수정</string>
+
+    <!-- Exit Member Fragment -->
+    <string name="exit_member">회원 탈퇴</string>
+    <string name="exit_question">정말 탈퇴하시겠습니까?</string>
+
+    <!-- Diary Fragment -->
+    <string name="diary">다이어리</string>
+    <string name="order_list">주문 목록</string>
+    <string name="buy_diary">구매하기</string>
+
+    <!-- Order List Fragment -->
+    <string name="order_number_title">주문 번호</string>
+    <string name="order_number">1234</string>
+    <string name="courier_service_title">택배사</string>
+    <string name="courier_service">CJ 대한통운</string>
+    <string name="invoice_number_title">송장 번호</string>
+    <string name="invoice_number">1234</string>
+
+    <!-- Buy Diary Fragment -->
+    <string name="delivery">배송</string>
+    <string name="name">이름</string>
+    <string name="address">배송지</string>
+    <string name="address_choice">선택</string>
+    <string name="baby_name">아기 이름</string>
+    <string name="diary_title">다이어리 제목</string>
+    <string name="diary_period">기간</string>
+    <string name="template">템플릿</string>
+    <string name="buy">구매</string>
+
+    <!-- Inquiry Fragment -->
+    <string name="fragment_inquiry_title">문의</string>
+    <string name="write_inquiry">문의 작성</string>
+    <string name="inquiry_title">문의 제목</string>
+    <string name="inquiry_content">문의 내용</string>
+    <string name="inquiry_answer">문의 답변</string>
+
+    <!-- WriteInquiry Fragment -->
+    <string name="inquiry_category">문의 카테고리</string>
+    <string-array name="inquiry_category_array">
+        <item>배송</item>
+        <item>오류</item>
+    </string-array>
+    <string name="inquiry_title_hint">제목을 입력해주세요.</string>
+    <string name="inquiry_content_hint">내용을 입력해주세요.</string>
+
 </resources>

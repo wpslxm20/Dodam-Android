@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".src.main.myPage.BuyDiaryFragment">
+
+    <!-- Toolbar + Back Button -->
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:id="@+id/sign_in_btn_back"
+            android:background="@drawable/btn_back"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buy_diary"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"/>
+
+    </Toolbar>
+
+    <!-- 구분선 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/gradation_under_line"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- 배송 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delivery"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+    <View
+        android:layout_width="27dp"
+        android:layout_height="4dp"
+        android:background="@drawable/gradation_under_line"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:layout_marginRight="20dp"/>
+
+        <EditText
+            android:id="@+id/input_deliver_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/address"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:layout_marginRight="10dp"/>
+
+        <EditText
+            android:id="@+id/input_deliver_address"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginRight="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_deliver_address"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:textSize="12sp"
+            android:text="@string/address_choice"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_gradation_color"/>
+
+    </LinearLayout>
+
+
+    <!-- 다이어리 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/diary"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+    <View
+        android:layout_width="55dp"
+        android:layout_height="4dp"
+        android:background="@drawable/gradation_under_line"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/baby_name"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:layout_marginRight="30dp"/>
+
+        <EditText
+            android:id="@+id/input_baby_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diary_title"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:layout_marginRight="10dp"/>
+
+        <EditText
+            android:id="@+id/input_diary_title"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diary_period"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:layout_marginRight="60dp"/>
+
+        <EditText
+            android:id="@+id/input_diary_period_start"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginRight="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/btn_calendar"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="~"/>
+
+        <EditText
+            android:id="@+id/input_diary_period_end"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginRight="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/btn_calendar"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/template"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_diary_sample"
+                android:layout_marginRight="10dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_diary_sample"
+                android:layout_marginRight="10dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_diary_sample"/>
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/radio_btn_diary_pamphlet_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_btn_diary_pamphlet_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="사랑이"/>
+
+            <RadioButton
+                android:id="@+id/radio_btn_diary_pamphlet_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="25dp"
+                android:text="샛별이"/>
+            <RadioButton
+                android:id="@+id/radio_btn_diary_pamphlet_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="희망이"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_buy_diary"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:text="@string/buy"
+        android:textSize="12sp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_gradation_color"
+        android:textColor="@color/white"/>
+
+
+</LinearLayout>
