@@ -73,6 +73,7 @@ class WriteScheduleFragment() : BottomSheetDialogFragment(){
         super.onDestroyView()
     }
 
+    // 프래그먼트 크기 조절
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = BottomSheetDialog(requireContext(), theme).apply {
             behavior.state = BottomSheetBehavior.STATE_EXPANDED

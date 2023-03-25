@@ -1,14 +1,23 @@
 package com.umc.dodam.src.main.myPage
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.umc.dodam.R
+import com.kakao.sdk.auth.model.OAuthToken
+import com.kakao.sdk.common.model.ClientError
+import com.kakao.sdk.common.model.ClientErrorCause
+import com.kakao.sdk.user.UserApiClient
 import com.umc.dodam.databinding.FragmentLoginBinding
 import com.umc.dodam.src.main.Api.RetrofitBuilder
-import com.umc.dodam.src.main.myPage.LoginApi.LoginDTO
+import com.umc.dodam.src.main.myPage.LoginApi.LoginRequest
+import com.umc.dodam.src.main.myPage.LoginApi.LoginResponse
+import retrofit2.Call
+import retrofit2.Response
+import javax.security.auth.callback.Callback
 
 
 class LoginFragment : Fragment() {
@@ -18,7 +27,8 @@ class LoginFragment : Fragment() {
 
 
     //login 아이디, 비밀번호 선언
-    lateinit var inputLogin : LoginDTO
+    lateinit var inputLogin : LoginRequest
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,13 +87,28 @@ class LoginFragment : Fragment() {
         }
 
 
+
         //로그인 api 연동
         binding.btnLogin.setOnClickListener{
             //입력된 아이디, 비밀번호 값을 가져와 LoginDTO 형식의 변수에 저장
             inputLogin.userName = binding.tvId.text.toString()
             inputLogin.password = binding.tvPw.text.toString()
 
-            RetrofitBuilder.api.login(inputLogin)
+            RetrofitBuilder.loginApi.login(inputLogin).enqueue(object : Callback<Response<Void>>{
+//                override fun onResponse(
+//                    call: Call<Void>,
+//                    response: Response<Void>
+//                ) {
+//                    if(response.isSuccessful) {
+//                        Log.d("test", response.body().toString())
+//                        var data = response.headers() // GsonConverter를 사용해 데이터매핑
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+//                    Log.d("test", "실패$t")
+                }
+            )
         }
 
 
@@ -115,3 +140,4 @@ class LoginFragment : Fragment() {
 
 
 }
+

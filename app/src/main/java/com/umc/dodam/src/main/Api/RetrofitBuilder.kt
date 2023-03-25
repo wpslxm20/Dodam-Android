@@ -1,10 +1,11 @@
 package com.umc.dodam.src.main.Api
 
+import com.umc.dodam.src.main.myPage.LoginApi.LoginInterface
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitBuilder {
-    var api: ApiInterface
+    var loginApi: LoginInterface
 
     init {
         val retrofit = Retrofit.Builder()
@@ -12,6 +13,6 @@ object RetrofitBuilder {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        api = retrofit.create(ApiInterface::class.java)
+        loginApi = retrofit.create(LoginInterface::class.java)
     }
 }
