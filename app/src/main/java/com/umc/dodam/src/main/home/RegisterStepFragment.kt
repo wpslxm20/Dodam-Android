@@ -181,6 +181,7 @@ class RegisterStepFragment() : Fragment(), View.OnClickListener {
 
             override fun onResponse(call: Call<Step>, response: Response<Step>) {
                 var temp = response.body().toString()
+                Log.d("stepMain test", temp)
             }
         })
     }

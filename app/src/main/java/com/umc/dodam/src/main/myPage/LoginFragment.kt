@@ -12,12 +12,20 @@ import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.umc.dodam.databinding.FragmentLoginBinding
+import com.umc.dodam.src.main.Api.AuthorizationData
+import com.umc.dodam.src.main.Api.DataStore
 import com.umc.dodam.src.main.Api.RetrofitBuilder
+import com.umc.dodam.src.main.home.HomeApi.HomeInterface
+import com.umc.dodam.src.main.myPage.LoginApi.LoginInterface
 import com.umc.dodam.src.main.myPage.LoginApi.LoginRequest
-import com.umc.dodam.src.main.myPage.LoginApi.LoginResponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
+import retrofit2.Retrofit
+import retrofit2.Callback
 
 
 class LoginFragment : Fragment() {
@@ -25,13 +33,19 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
+    // retrofit builder 선언
+    private val retrofit: Retrofit = RetrofitBuilder.getInstance()
+    private val api: LoginInterface = retrofit.create(LoginInterface::class.java)
 
-    //login 아이디, 비밀번호 선언
-    lateinit var inputLogin : LoginRequest
+    // 자동 로그인 선언
+    private lateinit var authorizationData: AuthorizationData
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 자동 로그인
+        authorizationData = AuthorizationData(requireContext())
     }
 
     override fun onCreateView(
@@ -91,24 +105,35 @@ class LoginFragment : Fragment() {
         //로그인 api 연동
         binding.btnLogin.setOnClickListener{
             //입력된 아이디, 비밀번호 값을 가져와 LoginDTO 형식의 변수에 저장
-            inputLogin.userName = binding.tvId.text.toString()
-            inputLogin.password = binding.tvPw.text.toString()
+            val inputId = binding.tvId.text.toString()
+            val inputPassword = binding.tvPw.text.toString()
 
-            RetrofitBuilder.loginApi.login(inputLogin).enqueue(object : Callback<Response<Void>>{
-//                override fun onResponse(
-//                    call: Call<Void>,
-//                    response: Response<Void>
-//                ) {
-//                    if(response.isSuccessful) {
-//                        Log.d("test", response.body().toString())
-//                        var data = response.headers() // GsonConverter를 사용해 데이터매핑
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-//                    Log.d("test", "실패$t")
+            val inputLogin = LoginRequest(inputId, inputPassword)
+
+            api.login(inputLogin).enqueue(object : Callback<Void> {
+                override fun onResponse(
+                    call: Call<Void>,
+                    response: Response<Void>
+                ) {
+                    if (response.isSuccessful) {
+                        // 로그인 버튼 클릭 시 헤더에서 토큰값 받아오기
+                        var token = response.headers().get("Authorization")
+                        Log.d("성공", token.toString())
+
+                        // token 디바이스에 저장 -> 자동 로그인을 위해
+                        CoroutineScope(IO).launch {
+                            authorizationData.saveToken(token.toString())
+//                            Log.d("성공boolean", authorizationData.getIsLogin().first().toString())
+//                            Log.d("성공token", authorizationData.getToken().first())
+                        }
+
+                    }
                 }
-            )
+
+                override fun onFailure(call: Call<Void>, t: Throwable) {
+                    Log.d("test", "실패$t")
+                }
+            })
         }
 
 

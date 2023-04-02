@@ -25,6 +25,8 @@
     <string name="thu">thu</string>
     <string name="fri">fri</string>
     <string name="sat">sat</string>
+    <string name="step_kor">과정 </string>
+    <string name="ing">일째</string>
 
 
     <!--SignUp Fragment-->

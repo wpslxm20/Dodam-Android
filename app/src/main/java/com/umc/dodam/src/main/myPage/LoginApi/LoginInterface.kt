@@ -8,7 +8,7 @@ import retrofit2.http.POST
 
 interface LoginInterface {
     //    @FormUrlEncoded
-    @POST("login")
-    fun login(@Body param: LoginRequest) : Call<Response<Void>>
+    @POST("/login")
+    fun login(@Body param: LoginRequest) : Call<Void>
 
 }
