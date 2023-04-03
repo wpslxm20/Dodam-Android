@@ -1,12 +1,10 @@
-package com.umc.dodam.src.main.myPage.LoginApi
+package com.umc.dodam.src.main.myPage.MyPageApi
 
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.Body
-import retrofit2.http.FieldMap
 import retrofit2.http.POST
 
-interface LoginInterface {
+interface MyPageInterface {
     //    @FormUrlEncoded
     @POST("/login")
     fun login(@Body param: LoginRequest) : Call<Void>

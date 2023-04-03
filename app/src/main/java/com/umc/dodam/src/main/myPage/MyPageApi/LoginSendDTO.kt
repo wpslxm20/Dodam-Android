@@ -1,6 +1,5 @@
-package com.umc.dodam.src.main.myPage.LoginApi
+package com.umc.dodam.src.main.myPage.MyPageApi
 
-import androidx.annotation.Nullable
 import com.google.gson.annotations.SerializedName
 
 data class LoginRequest (

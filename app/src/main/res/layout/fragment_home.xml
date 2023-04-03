@@ -64,14 +64,15 @@
                     android:text="@string/step_kor"
                     android:textStyle="bold"
                     android:textSize="16dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:layout_marginRight="5dp"/>
                 <TextView
                     android:id="@+id/tv_dday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="@+id/tv_nickname"
                     app:layout_constraintTop_toBottomOf="@+id/tv_nickname"
-                    android:text="2"
+                    android:text="00"
                     android:textStyle="bold"
                     android:textSize="16dp"
                     android:textColor="@color/black" />
@@ -126,16 +127,37 @@
                 android:textStyle="bold"
                 android:textColor="#454545">
             </TextView>
-            <TextView
-                android:id="@+id/tv_nowStep_date"
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10월 1일 ~ 10일까지"
-                android:textSize="8dp"
-                android:textStyle="bold"
-                android:textColor="#757575"
+                android:orientation="horizontal"
                 android:layout_marginTop="5dp">
-            </TextView>
+                <TextView
+                    android:id="@+id/tv_nowstep_start_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00월 00일"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    android:textColor="#757575"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="~"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    android:textColor="#757575"
+                    android:layout_marginHorizontal="3dp"/>
+                <TextView
+                    android:id="@+id/tv_nowstep_end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00월 00일"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    android:textColor="#757575"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

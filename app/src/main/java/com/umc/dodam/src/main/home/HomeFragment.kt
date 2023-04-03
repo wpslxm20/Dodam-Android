@@ -39,6 +39,7 @@ import java.time.LocalDate
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 import retrofit2.Callback
+import java.text.SimpleDateFormat
 
 
 class HomeFragment : Fragment() {
@@ -149,7 +150,7 @@ class HomeFragment : Fragment() {
                 override fun onResponse(call: Call<HomeStepResponse>, response: Response<HomeStepResponse>) {
                     var temp: HomeStepResponse? = response.body()
                     if (temp != null) {
-                        binding.tvNickname.text = temp.memberNickName
+                        settingHome(temp)
 
                         // homeStepList 만들기
                         updateHomeStepList(temp)
@@ -164,7 +165,21 @@ class HomeFragment : Fragment() {
     }
 
     private fun settingHome(temp: HomeStepResponse?){
+        // 닉네임 바인딩
         binding.tvNickname.text = temp!!.memberNickName
+
+        // Dday 바인딩
+        binding.tvDday.text = temp!!.dDay.toString()
+
+        if(temp.nowStep == null){
+
+            // 배경화면에서 현재 단계와 날짜 띄우기 해야 함!
+//            binding.tvNowStepName.text = temp.nowStep.stepName
+//            val format = SimpleDateFormat("MM월 dd일")
+//
+//            binding.tvNowstepStartDate.text = format.format(temp.nowStep.startDate)
+//            binding.tvNowstepEndDate.text = format.format(temp.nowStep.endDate)
+        }
     }
     private fun updateHomeStepList(temp:HomeStepResponse?){
         // 시술 단계 가져오기에 성공하면

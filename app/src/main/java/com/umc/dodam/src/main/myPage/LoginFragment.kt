@@ -13,14 +13,11 @@ import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.umc.dodam.databinding.FragmentLoginBinding
 import com.umc.dodam.src.main.Api.AuthorizationData
-import com.umc.dodam.src.main.Api.DataStore
 import com.umc.dodam.src.main.Api.RetrofitBuilder
-import com.umc.dodam.src.main.home.HomeApi.HomeInterface
-import com.umc.dodam.src.main.myPage.LoginApi.LoginInterface
-import com.umc.dodam.src.main.myPage.LoginApi.LoginRequest
+import com.umc.dodam.src.main.myPage.MyPageApi.MyPageInterface
+import com.umc.dodam.src.main.myPage.MyPageApi.LoginRequest
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Response
@@ -35,7 +32,7 @@ class LoginFragment : Fragment() {
 
     // retrofit builder 선언
     private val retrofit: Retrofit = RetrofitBuilder.getInstance()
-    private val api: LoginInterface = retrofit.create(LoginInterface::class.java)
+    private val api: MyPageInterface = retrofit.create(MyPageInterface::class.java)
 
     // 자동 로그인 선언
     private lateinit var authorizationData: AuthorizationData

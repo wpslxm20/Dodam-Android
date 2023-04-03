@@ -1,8 +1,6 @@
 package com.umc.dodam.src.main.Api
 
 import android.content.Context
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
@@ -10,7 +8,6 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.umc.dodam.src.main.Api.AuthorizationData.PreferenceKeys.ACCESS_TOKEN
 import com.umc.dodam.src.main.Api.AuthorizationData.PreferenceKeys.LOGIN_CHECK
-import com.umc.dodam.src.main.myPage.LoginApi.LoginInterface
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
